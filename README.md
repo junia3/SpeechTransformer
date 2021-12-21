@@ -1,8 +1,6 @@
 # SpeechTransformer
 SpeechTransformer
 
-https://github.com/sooftware/speech-transformer를 사용하여 진행.
-
 #### 사용한 데이터셋 ####
 librispeech_100h, 360h : training
 librispeech_dev : validation
