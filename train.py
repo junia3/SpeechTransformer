@@ -93,6 +93,7 @@ def train_data(ep, train_dataloader, val_dataloader, warm, criterion = 'CE'):
     running_loss = 0.0
     
     for epoch in range(ep):
+      model.train()
       for i, data in enumerate(train_dataloader, 0):
           inputs, target_input, target_output, input_length, output_length = data
           input_length = torch.tensor(input_length, dtype = torch.int32)
@@ -119,6 +120,7 @@ def train_data(ep, train_dataloader, val_dataloader, warm, criterion = 'CE'):
               running_loss = 0.0
           
           if i % 200 == 199:
+            model.eval()
             with torch.no_grad():
               val_loss = 0.0
               acc = 0.0
